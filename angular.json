@@ -63,6 +63,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 3000
+          },
           "configurations": {
             "production": {
               "browserTarget": "convz-app:build:production"
@@ -100,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "77a6ece0-7248-4b8e-a4de-b2d0e6a7ba75"
   }
 }

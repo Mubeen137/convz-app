@@ -1,0 +1,37 @@
+<div class="flex-start" style="overflow: hidden;">
+  <section class="left-sign">
+    <div class="top">
+      <div class="top-txt">Sign in</div>
+      <div class="sub-txt mt-1">Please click the button to begin</div>
+    </div>
+
+    <div class="flex-el wrap mt-3">
+      <div class="sign-in-but mr-2">
+        <img [src]="images + 'microsoft.png' " width="15" alt="m">
+        <span>Sign in with Microsoft</span>
+      </div>
+      <!-- <div class="sign-in-but" (click)="loginwithgoogle()">
+        <img [src]="images + 'google.png' " width="15" alt="g">
+        <span>Sign in with Google</span>
+      </div> -->
+      <asl-google-signin-button type='standard' shape="pill" class="sign-in-but two" text="signin_with" size='medium'></asl-google-signin-button>
+    </div>
+  </section>
+
+  <section class="right-sign">
+    <img [src]="images + 'core-background.png' " class="img-dimension" style="position: absolute;" alt="">
+    <div class="right-content">
+      <div>
+        <div class="right-top-txt">Embedded Analytics Platform</div>
+        <div class="right-sub-txt">Revolutionise your business with data-driven insights and outperform the competition with informed decision-making.</div>
+      </div>
+  
+      <div class="chart-container">
+        <div class="bar-chart"><img [src]="images + 'bar-chart.png' " class="img-dimension" alt="bar_chart"></div>
+        <div class="pie-chart"><img [src]="images + 'pie-chart.png' " class="img-dimension" alt="pie_chart"></div>
+      </div>
+
+      <div class="dashes"><div [ngClass]="{'dash': true, 'active': pic == dash}" *ngFor="let dash of dashes"></div></div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,13 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened class="sidenav" [ngStyle]="{'width': opened ? '15em' : ''}">
+        <app-sidenav [opened]="opened" (open)="opened = $event" ></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div (click)="opened = false">
+            <app-top-bar></app-top-bar>
+            <div class="main-container">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

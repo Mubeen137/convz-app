@@ -1,0 +1,68 @@
+@import '../../../../assets/scss/mixin.scss';
+
+:host {
+  display: block;
+
+  .container{
+    padding: 20px;
+
+    @include responsive(600px){
+      flex-direction: column-reverse;
+
+      .one{
+        align-self: flex-start;
+      }
+
+      .two{
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .icn{
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+  }
+
+  .but{
+    padding: 10px;
+    border-radius: 5px;
+    color: #353D42;
+
+    @include responsive(450px){
+      span{
+        display: none;
+      }
+    }
+
+    &:hover{
+      cursor: pointer;
+      box-shadow: 0 0 2px 1px #eee;
+    }
+
+    &.out{
+      &:hover{
+        color: crimson;
+        box-shadow: 0 0 2px 1px #dc143c9d;
+      }
+    }
+  }
+
+  .name{
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 10px;
+  }
+
+  .profile{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .img{
+    border-radius: 50%;
+  }
+}
