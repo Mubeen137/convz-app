@@ -1,0 +1,24 @@
+@import '../../assets/scss/mixin.scss';
+
+:host {
+  display: block;
+
+  .container{
+    height: 100vh;
+  }
+
+  .sidenav{
+    background-color: #515151;
+    width: 18em;
+    height: 100vh;
+    transition: all .5s;
+
+    @include responsive(850px){
+      width: 4em;
+    }
+  }
+  
+  .main-container{
+    padding: 0 30px;
+  }
+}

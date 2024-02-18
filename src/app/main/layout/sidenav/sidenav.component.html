@@ -1,0 +1,33 @@
+<div class="side-nav">
+    <div class="main-menu">
+        <div class="flex-el">
+            <div class="men" [ngStyle]="{'text-align': opened ? 'left' : 'center', 'width': opened ? 'fit-content' : '100%'}" (click)="openSide()"><mat-icon>menu</mat-icon></div>
+            <div class="tit" [ngStyle]="{'display': opened ? 'block' : '', 'padding-left': opened ? '10px' : ''}">
+                REPORTS
+            </div>
+        </div>
+
+        <ng-container *ngFor="let menu of menus">
+            <div class="menu" routerLinkActive="active" [routerLink]="menu.route" [matTooltip]="menu.name">
+                <div class="icn">
+                    <img [src]="menu.activeLogo" alt="" class="logo-active">
+                    <img [src]="menu.inactiveLogo" alt="" class="logo-inactive">
+                </div>
+                <div class="name" [ngStyle]="{'display': opened ? 'block' : ''}">{{menu.name}}</div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="remaining-space"></div>
+
+    <div class="sub-menu">
+        <ng-container *ngFor="let menu of submenus">
+            <div class="menu" [matTooltip]="menu.name">
+                <div class="icn">
+                    <img [src]="menu.inactiveLogo" alt="" class="logo-inactive">
+                </div>
+                <div class="name" [ngStyle]="{'display': opened ? 'block' : ''}">{{menu.name}}</div>
+            </div>
+        </ng-container>
+    </div>
+</div>

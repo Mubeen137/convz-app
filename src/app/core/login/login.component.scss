@@ -1,0 +1,183 @@
+@import '../../../assets/scss/mixin.scss';
+
+.flex-start{
+    @include responsive(500px){
+        flex-direction: column;
+    }
+}
+
+.left-sign{
+    width: 40em;
+    padding: 40px;
+
+    @include responsive(1000px){
+        width: 25em;
+    }
+
+    @include responsive(500px){
+        width: fit-content !important;
+    }
+
+    .top{
+        margin-top: 30px;
+
+        .top-txt{
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .sub-txt{
+            font-size: 12px;
+        }
+    }
+
+    .sign-in-but{
+        padding: 16px;
+        border-radius: 10px;
+        font-size: 13px;
+        display: flex;
+        border: 1px solid #888888;
+        color: black;
+        cursor: pointer;
+
+        &.two{
+            padding: 7px 10px !important;
+        }
+        
+        @include responsive(600px){
+            margin-right: 0 !important;
+        }
+        
+        @include responsive(500px){
+            margin-right: 20px !important;
+        }
+    
+        span{
+            margin-left: 10px;
+        }
+
+        &:first-child{
+            @include responsive(1250px){
+                margin-bottom: 10px;
+            }
+
+            @include responsive(500px){
+                margin-bottom: 0px !important;
+            }
+
+            @include responsive(450px){
+                margin-bottom: 10px !important;
+            }
+        }
+    }
+}
+
+.right-sign{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+
+    @include responsive(500px){
+        width: 100%;
+    }
+
+    .right-content{
+        margin: 60px 7rem 0;
+        z-index: 1;
+        position: relative;
+        width: 80%;
+        max-width: 50em;
+
+        @include responsive(1100px){
+            margin: 60px 3rem 0;
+        }
+    }
+
+    .right-top-txt{
+        color: white;
+        font-size: 5rem;
+        line-height: 1;
+        font-weight: 600;
+        margin-bottom: 30px;
+
+        
+        @include responsive(1300px){
+            font-size: 4rem;
+        }
+        
+        @include responsive(1100px){
+            font-size: 3rem;
+        }
+    }
+
+    .right-sub-txt{
+        color: white;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        
+        @include responsive(1100px){
+            font-size: 1rem;
+        }
+    }
+
+    .chart-container{
+        position: relative;
+        animation: enter infinite 10s;
+
+        .bar-chart{
+            padding: 10px;
+            border-radius: 20px;
+            width: 70%;
+            height: 45vh;
+            background-color: white;
+
+            @include responsive(700px){
+                height: 30vh;
+            }
+        }
+
+        .pie-chart{
+            padding: 10px;
+            border-radius: 20px;
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            width: 30%;
+            height: 30vh;
+            background-color: white;
+            box-shadow: -6px 11px 10px 0px #0000001A;
+            
+            @include responsive(700px){
+                height: 15vh;
+            }
+        }
+    }
+
+    .dashes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        transition: all 1s ease-in-out;
+
+        .dash{
+            width: 2em;
+            height: 3px;
+            background-color: #FFFFFF80;
+            margin: 0 5px;
+            border-radius: 2px;
+
+            &.active{
+                background-color: white;
+            }
+        }
+    }
+}
+
+@keyframes enter {
+    0%{left: 100%; opacity: 0.5;}
+    10%{left: 0; opacity: 1;}
+    90%{left: 0; opacity: 1;}
+    100%{opacity: 0;}
+}

@@ -1,0 +1,42 @@
+:host {
+  display: block;
+
+  .tab{
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #51515133;
+    }
+
+    &.selected{
+      background-color: #515151;
+      color: white;
+    }
+  }
+
+  .body{
+    height: 70vh;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .butts{
+    padding: 7px 20px;
+    display: flex;
+    width: fit-content;
+    margin-left: 10px;
+    background-color: #515151;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center;
+    cursor: pointer;
+
+    img{
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="flex-btw mb-1 container">
+    <div class="flex-el one">
+        <mat-icon>west</mat-icon>
+        <div class="ml-2">
+            <div class="name">{{currentRoute}}</div>
+            <app-bread-crumb (name)="currentRoute = $event"></app-bread-crumb>
+        </div>
+    </div>
+
+    <div class="flex-el two">
+        <div class="flex-el but"><mat-icon class="material-icons-outlined icn">settings</mat-icon> <span>Settings</span></div> 
+        <div class="flex-el but out" (click)="logout()"><mat-icon class="icn">logout</mat-icon> <span>Log Out</span></div>
+        <div class="profile" [title]="user.name | titlecase"><img [src]="user.photoUrl || image + 'profile.png' " class="img img-dimension" alt=""></div>
+    </div>
+</div>
