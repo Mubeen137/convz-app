@@ -40,6 +40,13 @@
         color: black;
         cursor: pointer;
 
+        &.none{
+            cursor: not-allowed;
+            &:hover{
+                filter: grayscale(0.5);
+            }
+        }
+
         &.two{
             padding: 7px 10px !important;
         }

@@ -1,11 +1,21 @@
-import { AuthService } from "../services/auth.service";
-
+import { AesService } from "../services/aes.service";
+import { Injectable } from "@angular/core";
+@Injectable({
+    providedIn: 'root'
+  })
 export class utilService {
-    constructor(private auth: AuthService) {}
+    constructor(private aes: AesService) {}
 
-    public getLoggedinstatus(){
-        let status: boolean = false;
-        this.auth.loginStatus$.subscribe((stat) => status = stat)
-        return status;
+    public getFromStore(key: string){
+        let keyCode = btoa(key)
+        let val = localStorage.getItem(keyCode) || '';
+        let resolvedVal = this.aes.decrypt(val)
+        return resolvedVal ? JSON.parse(resolvedVal) : ''
+    }
+
+    public saveToStore(key: string, val: any){
+        let keyCode = btoa(key)
+        let valCode = this.aes.encrypt(JSON.stringify(val))
+        localStorage.setItem(keyCode, valCode)
     }
 }

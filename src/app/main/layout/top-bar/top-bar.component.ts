@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Component, type OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Constants } from 'src/app/shared/utilities/constants';
+import { utilService } from 'src/app/shared/utilities/utils';
 
 @Component({
   selector: 'app-top-bar',
@@ -14,7 +16,7 @@ export class TopBarComponent implements OnInit {
   image: string = 'assets/images/';
   user: any;
 
-  constructor(private router: Router, private auth$: AuthService) {
+  constructor(private router: Router, private auth$: AuthService, private util: utilService) {
     
   }
 
@@ -23,8 +25,9 @@ export class TopBarComponent implements OnInit {
   }
 
   getUserDetails(){
-    let user = localStorage.getItem('user')
-    user ? this.user = JSON.parse(user) : '';
+    this.user = this.util.getFromStore(Constants.user)
+    console.log(this.user);
+    
   }
 
   logout(){

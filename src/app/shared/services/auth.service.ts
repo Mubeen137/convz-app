@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { utilService } from '../utilities/utils';
+import { Constants } from '../utilities/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class AuthService {
   public isLoggedin = new BehaviorSubject<boolean>(false);
   public loginStatus$ = this.isLoggedin.asObservable()
 
-  constructor() { 
+  constructor(private util: utilService) { 
     this.checkLoginStatus()
   }
 
@@ -17,7 +19,7 @@ export class AuthService {
   }
 
   checkLoginStatus(){
-    let user = localStorage.getItem('user')
+    let user = this.util.getFromStore(Constants.user);
     user ? this.isLoggedin.next(true) : this.isLoggedin.next(false)
   }
 }

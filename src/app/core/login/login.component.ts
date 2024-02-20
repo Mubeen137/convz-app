@@ -2,6 +2,8 @@ import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-socia
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Constants } from 'src/app/shared/utilities/constants';
+import { utilService } from 'src/app/shared/utilities/utils';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,7 @@ export class LoginComponent {
     private googleService: SocialAuthService, 
     private router: Router,
     private auth$: AuthService,
+    private util: utilService,
     ) {
     
   }
@@ -36,7 +39,7 @@ export class LoginComponent {
   }
 
   login(){
-    localStorage.setItem('user', JSON.stringify(this.user))
+    this.util.saveToStore(Constants.user, this.user)
     this.auth$.isLoggedin.next(true)
     this.router.navigateByUrl('/app/report-one')
   }
