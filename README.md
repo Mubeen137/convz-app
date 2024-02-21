@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Procedures to running the Application
 
 1. Clone the project:
-    Run 'git clone https://github.com/Mubeen137/convz-app.git' on your terminal or command prompt to clone the project locally in your system.
+    Run <b>git clone https://github.com/Mubeen137/convz-app.git</b> on your terminal or command prompt to clone the project locally in your system.
 
 2. Install Angular cli on your system:
     Ensure you have the node package manager (NPM) installed on your system if not go to 
