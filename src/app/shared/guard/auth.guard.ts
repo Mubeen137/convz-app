@@ -9,6 +9,8 @@ export const authGuard: CanActivateFn = (route, state) => {
   
   return auth.loginStatus$.pipe(
     map((status: boolean) => {
+      console.log(status);
+      
       if(!status){
         router.navigateByUrl('/');
         return false;

@@ -26,13 +26,9 @@ export class TopBarComponent implements OnInit {
 
   getUserDetails(){
     this.user = this.util.getFromStore(Constants.user)
-    console.log(this.user);
-    
   }
 
   logout(){
-    localStorage.clear()
-    this.auth$.isLoggedin.next(false)
-    this.router.navigateByUrl('/')
+    this.auth$.logout()
   }
 }

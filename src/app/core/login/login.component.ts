@@ -1,6 +1,7 @@
 import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Constants } from 'src/app/shared/utilities/constants';
 import { utilService } from 'src/app/shared/utilities/utils';
@@ -11,7 +12,8 @@ import { utilService } from 'src/app/shared/utilities/utils';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  images: string = 'assets/images/'
+  private unsubscribe: Subject<void> = new Subject();
+  images: string = 'assets/images/';
   user: any;
   dashes: any = [1,2,3];
   pic: number = 1;
@@ -27,11 +29,11 @@ export class LoginComponent {
 
   ngOnInit(): void{
     localStorage.clear()
-    this.googleService.authState.subscribe((user) =>{
+    this.googleService.authState.pipe(takeUntil(this.unsubscribe))
+    .subscribe((user) =>{
       this.user = user;
       if(this.user) this.login()
     })
-
     setInterval(() =>{
       this.pic++
       this.pic == 4 ? this.pic = 1 : this.pic = this.pic
@@ -40,8 +42,10 @@ export class LoginComponent {
 
   login(){
     this.util.saveToStore(Constants.user, this.user)
-    this.auth$.isLoggedin.next(true)
+    console.log(this.user);
+    this.auth$.setLoginStatus(true)
     this.router.navigateByUrl('/app/report-one')
+    this.unsubscribe.complete()
   }
 
   loginwithgoogle(){

@@ -14,9 +14,12 @@ Procedures to running the Application
     https://nodejs.org/en/download to downlaod and install the appropraite version. </b>
     If Node has been installed, go ahead and install angular on your terminal or cli by running the command <b>npm install @angular/cli</b>.
 
-3. Finally, Run the Application:</b>
-    Once the angular environment has been setup, open the CONVZ-APP folder on any IDE of your choice or open a terminal and navigate to the folder. Run the app using the command 'ng serve'.</b>
+3. Installing needed packages:</b>
+    Once the angular environment has been setup, open the CONVZ-APP folder on any IDE of your choice or open a terminal and navigate to the folder.
+    Type in the command <b>npm install</b> to install the needed packages.
+    
+    
+4. Finally, Run the Application:</b>
+    Once complete, run the app using the command <b>ng serve</b>.</b>
     Go to <b><i>localhost:3000</i></b> on your browser to login with your google account.
-
-# Check it out on github server
-Alternatively go to this link to load the application.
+=
