@@ -1,11 +1,20 @@
+@import '../../../../assets/scss/mixin.scss';
+
 :host {
   display: block;
+
+  .tabs{
+    @include responsive(500px){
+      gap: 10px;
+    }
+  }
 
   .tab{
     padding: 10px 20px;
     margin-right: 10px;
     font-size: 12px;
     cursor: pointer;
+    border: 1px solid #51515133;
 
     &:hover{
       background-color: #51515133;
@@ -13,6 +22,7 @@
 
     &.selected{
       background-color: #515151;
+      border: none;
       color: white;
     }
   }
@@ -21,6 +31,13 @@
     height: 70vh;
     width: 100%;
     margin: 20px 0;
+  }
+
+  .little-buts{
+    @include responsive(580px){
+      gap: 10px;
+      justify-content: flex-start;
+    }
   }
 
   .butts{

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="tabs flex-el">
+    <div class="tabs flex-el wrap">
         <ng-container *ngFor="let tab of tabs">
             <div [ngClass]="{'tab': true, 'selected': selectedTab == tab}"  (click)="selectedTab = tab">{{tab.name}}</div>
         </ng-container>
@@ -10,7 +10,7 @@
             <img [src]="selectedTab.image" class="img-dimension" alt="chart">
         </div>
 
-        <div class="flex-end" style="align-items: stretch;">
+        <div class="flex-end little-buts wrap" style="align-items: stretch;">
             <div class="butts"><img [src]="icons + 'pdf.svg' " alt="pdf"> Export to PDF</div>
             <div class="butts"><img [src]="icons + 'csv.svg' " alt="csv"> Export to CSV</div>
             <div class="butts"><img [src]="icons + 'email.svg' " alt="email"> Send to Email</div>

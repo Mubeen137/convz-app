@@ -1,4 +1,4 @@
 <span *ngFor="let route of currentRoute; let last = last; let first = first">
-    <span [routerLink]="route.url" [ngClass]="{'route': true, 'first': first, 'other': !first}">{{route.name}}</span>
+    <span [routerLink]=" '/' + route.url" [ngClass]="{'route': true, 'first': first, 'other': !first}">{{route.name}}</span>
     <span *ngIf="!last">/</span>
 </span>
